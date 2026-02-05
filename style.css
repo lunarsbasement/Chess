@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffe6f0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #ff4d88;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 70px);
+  grid-template-rows: repeat(8, 70px);
+  border: 4px solid #ff80aa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.square {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light {
+  background: #fff0f5; /* white-pink */
+}
+
+.dark {
+  background: #ffb6c1; /* pink */
+}
+
+.piece {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.highlight {
+  box-shadow: inset 0 0 0 4px #ff4d88;
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  font-size: 24px;
+  animation: fall 2.5s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#win-message {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff0f5;
+  padding: 30px 40px;
+  border-radius: 20px;
+  font-size: 26px;
+  color: #ff4d88;
+  text-align: center;
+  z-index: 10;
+}
+
